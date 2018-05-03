@@ -1,0 +1,54 @@
+public class primos {
+
+	public static void imprimir(int[]array)
+	{
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		try 
+		{
+			for(int i =0 ; i<array.length;i++)
+			{
+				if (array[i] != -1)
+				bw.write(array[i] +"\n ");
+			}
+			bw.flush();
+		}catch(Exception ex)
+		{}
+	}
+	
+	
+	public static int[]primos(int n)
+	{
+		int primos[]= new int [n];
+		
+		for(int i =0 ; i <primos.length;i++)
+		{
+			primos[i]= (i + 1);
+		}
+		
+		for(int i =1 ; i <(primos.length/2);i++)
+		{
+			if(primos[i]!= -1)
+			{	
+			for(int j=(i+primos[i]);j<primos.length;j += primos[i])
+				{
+					primos[j]= -1;
+				}
+		
+			}
+	
+		}	
+		return primos;
+	
+	}
+	
+	public static void main (String[]Args)
+	{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+	
+		imprimir(primos(1000));
+		
+	}
+	
+	
+}
