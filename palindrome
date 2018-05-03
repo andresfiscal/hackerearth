@@ -1,0 +1,44 @@
+public class Palindrome
+{
+public static void main(String[]args)
+  {
+   int i;
+   Scanner Leer = new Scanner(System.in);
+   String frase= " ";
+   String fraseso="";
+   int n=0;
+   System.out.print("digite la frase: \n\n");         
+    frase=Leer.nextLine();
+    fraseso=frase.replace(" ","");  
+    fraseso=fraseso.replace(".","");
+    fraseso=fraseso.toLowerCase();
+    int longitud=0;
+    longitud=fraseso.length();
+    longitud-=1;
+    char vec[]=fraseso.toCharArray();
+    System.out.print("Esta es la palabra digitada:  \n\n");	
+         for ( i = 0; i <fraseso.length(); i++)
+          {
+           System.out.print(vec[i]);
+          }
+            for ( i = 0; i <fraseso.length()/2; i++)
+              {
+                if(vec[i]==vec[longitud-i])
+                {
+                }
+                else
+                {   
+                n+=1;
+                }
+              }
+        if(n>0)
+        {
+          System.out.println("\n\nNO");
+        }
+        else
+        {
+           System.out.println("\n\nYES");
+
+        }
+       }
+      }
