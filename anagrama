@@ -1,0 +1,48 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import  java.util.Scanner;
+import  java.util.*;
+
+
+
+public class Anagrama 
+{
+    public static void main(String[]args)
+    {
+        
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+         int i;
+         int opc=1;
+         Scanner Leer = new Scanner(System.in);
+         
+        System.out.print("Este programa determina si una frace es un anagrama o no \n\n");
+        String palabra= " ";
+        System.out.print("Digite la frase y presione enter: \n");     
+        palabra = Leer.nextLine();       
+   
+	
+        for (i = 1; i <=palabra.length(); i++)
+        {
+            opc*=i;
+        }
+        System.out.println("el numero de combinaciones posibles es: " + opc);
+	
+        char palabras[]=palabra.toCharArray();
+        
+	for (i = 0; i < opc; i++)
+        {
+            System.out.println(palabras);
+	
+            char t=palabras[ i % (palabras.length-1)];
+	
+            palabras[i%(palabras.length-1)]=palabras[palabras.length-1];
+	
+            palabras[palabras.length-1]=t;
+	}
+    }
+    
+}
