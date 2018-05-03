@@ -1,0 +1,13 @@
+package Hackerearth;
+import java.io.*;
+class ascii {
+    public static void main(String args[] ) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		try {
+			String S = br.readLine();//lee la linea digitada
+			char[] Array = S.toCharArray(); //la guarda en un arreglo 
+			int asciiVal = (int)Array[0];// toma el primer indice del arreglo anterior
+			System.out.println(asciiVal); // remplaza la letra por el numero del valor
+		} catch (IOException ex) {}
+    }
+}
